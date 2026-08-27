@@ -6,7 +6,6 @@ A command line workflow to process Paired and single end ARTR-seq reads from fas
 - rRNA filtering
 - Genome alignment
 - UMI-based deduplication
-- Strand-specific BAM generation
 - BigWig coverage generation
 - MACS3 peak calling
 - Basic downstream statistics
@@ -14,8 +13,12 @@ A command line workflow to process Paired and single end ARTR-seq reads from fas
 ## Installation
 
 ```bash
-git clone <REPOSITORY_URL>
+git clone https://github.com/swati375/artr-seq-processing.git
 cd artr-seq-processing
 conda env create -f environment.yml
 conda activate seq-py312
 ```
+
+## Detailed usage
+
+For detailed instructions on running the preprocessing, alignment, and peak-calling workflows, see the [workflow documentation](docs/workflow.md).

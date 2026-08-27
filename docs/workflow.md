@@ -172,6 +172,7 @@ MACS3 can also find peaks if no Input/ control is provided by user, however I wo
 
 The paired-end (PE) data can either be used as PE or as single-end (SE). Script for both are available. To use same parameters as in the ARTR-seq paper https://pubmed.ncbi.nlm.nih.gov/38200227/,
 use:
+
 ---
 
 ## peak calling
