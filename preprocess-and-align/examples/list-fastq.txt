@@ -1,0 +1,12 @@
+48966_WT_A3_R1.fastq.gz
+48966_WT_A3_R2.fastq.gz
+48967_WT_input_E3_R1.fastq.gz
+48967_WT_input_E3_R2.fastq.gz
+49196_DKO_B3_R1.fastq.gz
+49196_DKO_B3_R2.fastq.gz
+49197_protAKO_C3_R1.fastq.gz
+49197_protAKO_C3_R2.fastq.gz
+49199_DKO_input_F3_R1.fastq.gz
+49199_DKO_input_F3_R2.fastq.gz
+49200_protAKO_input_G3_R1.fastq.gz
+49200_protAKO_input_G3_R2.fastq.gz

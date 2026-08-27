@@ -1,0 +1,6 @@
+fastqc.sh
+trim-filter-reads.sh
+filter-rrna.sh
+align-dedup.sh
+bamtobed-artr-pe.sh
+peak-calling-macs3.sh

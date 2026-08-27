@@ -1,0 +1,6 @@
+WT:48966_WT_A3
+Input_WT:48967_WT_input_E3
+protAKO:49197_protAKO_C3
+Input_protAKO:49200_protAKO_input_G3
+DKO:49196_DKO_E6440_B3
+Input_DKO:49199_DKO_input_E6440_F3

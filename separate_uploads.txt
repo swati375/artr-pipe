@@ -1,0 +1,9 @@
+rrna-files/human_rRNA_index need to be added too
+
+star index file generation added in code itself
+
+Sample list-fastq and sample-id.txt
+
+peak-files-default: pe with -f BAMPE option and extsize 30 (same command as se reads but using PE mode)
+peak-files_gap30_len100: pe mode with extra params--max-gap 30 --min-length 100 in macs3 call
+peak-files-se-ext30: se end mode with extsize 30(can be with single end seq and aligned or pe seq and aligned bam files)
