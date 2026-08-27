@@ -13,16 +13,16 @@ indir="$base_dir/trimmed-files"
 stardir="$base_dir/staralign-bam-files"
 mkdir $stardir
 
-staridx=/scratch/swatig/ARTR-seq/artr-origpaper-YTH/index-files
+staridx="$base_dir/index-files"
 mkdir $staridx
 printf "Your STAR index directory -- %s\n" $staridx
 
 ## generate star index
 ##download refrence files gft annotation(CHR) and fasta files (PRI)
-#index-files already available
-# STAR --runThreadN 8 --runMode genomeGenerate --genomeDir $staridx \
-# --genomeFastaFiles $base/GRCh38.primary_assembly.genome.fa \
-# --sjdbGTFfile $base/gencode.v39.annotation.gtf --sjdbOverhang 100
+
+STAR --runThreadN 8 --runMode genomeGenerate --genomeDir $staridx \
+ --genomeFastaFiles genome_files/GRCh38.primary_assembly.genome.fa \
+ --sjdbGTFfile genome_files/gencode.v39.annotation.gtf --sjdbOverhang 100
 
 nc=5
 # printf "Your core number used for STAR -- %s\n" $nc

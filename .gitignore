@@ -1,0 +1,43 @@
+# Conda
+conda-meta/
+.conda/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Sequencing data
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bam.bai
+*.bw
+*.bigWig
+
+# Pipeline output directories
+fastq-files/
+trimmed-files/
+staralign-bam-files/
+crosslink_nt/
+peak-files/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+
+# R session files
+.Rhistory
+.RData
+.Ruserdata
+
+# Local reference genomes and indexes
+genome_files/

@@ -13,10 +13,12 @@ outfdir=$base_dir/trimmed-files
 
 nc=4
 
-bt2idx=/scratch/swatig/ARTR-seq/artr-origpaper-YTH/rrna-files/human_rRNA_index
-	# inside the bt2idx folder
-	# esearch -db nucleotide -query "NR_003285.3 OR NR_003286.4 OR NR_003287.4 OR NR_023363.1" | efetch -format fasta > human_rRNA_refs.fasta
-	# bowtie2-build human_rRNA_refs.fasta human_rRNA_index
+bt2idx=rrna-files/human_rRNA_index
+#################################### we assume that index files already created once, so below lines are commented #############################
+# inside the bt2idx folder
+# esearch -db nucleotide -query "NR_003285.3 OR NR_003286.4 OR NR_003287.4 OR NR_023363.1" | efetch -format fasta > human_rRNA_refs.fasta
+# bowtie2-build human_rRNA_refs.fasta human_rRNA_index
+
 printf "Your bowtie2 index directory -- %s\n" $bt2idx
 
 for fi in $(ls $outfdir/trimmed*.fastq.gz)
