@@ -1,8 +1,8 @@
-rrna-files/human_rRNA_index need to be added too
 
-star index file generation added in code itself
+environment.yml: seq-py312 env for bash and python scriopts artr seq
+environmentR.yml: rbase_43 env for R scripts
 
-Sample list-fastq and sample-id.txt
+#rrna-files/human_rRNA_index need to be added too
 
 peak-files-default: pe with -f BAMPE option and extsize 30 (same command as se reads but using PE mode)
 peak-files_gap30_len100: pe mode with extra params--max-gap 30 --min-length 100 in macs3 call

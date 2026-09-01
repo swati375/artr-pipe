@@ -197,7 +197,9 @@ For example:
 peak-calling-macs3/examples/sample-id.txt
 ```
 
-The script will ask whether to run peak calling for all proteins or for a selected protein from your sample ID file.
+The script will ask whether to run peak calling for all proteins or for a selected protein from your sample ID file. The ouputs are written in 'peak-files....' directory.  
+
+The peaks are filtered by q-value 0.05. The .narrowPeak output file will be used further for downstream processing.
 
 ---
 

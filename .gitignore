@@ -39,5 +39,9 @@ peak-files/
 .RData
 .Ruserdata
 
-# Local reference genomes and indexes
-genome_files/
+
+# Large reference genome/annotation files
+genome_files/GRCh38/*.fa
+genome_files/GRCh38/*.gtf
+genome_files/GRCh38/*.gff3
+genome_files/GRCh38/*.csv
