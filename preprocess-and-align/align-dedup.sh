@@ -48,6 +48,7 @@ do
 	inrawR1=$fi
 
 	odir=${filename/norRNA./}
+	odir=${odir/_R1.fastq.gz/}
 	odir=${stardir}/${odir}
    	# echo $odir
 

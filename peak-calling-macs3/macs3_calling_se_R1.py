@@ -2,7 +2,7 @@ import os
 import sys
 ## selecting only R1 reads from bam file for macs3 call
 print("Step 6. calling peaks with macs3\n")
-base_dir=input('Enter Path:')
+base_dir=input('Enter  Base directory Path:')
 peakdir=base_dir+'/peak-files-se-ext30-R1/'
 command='mkdir '+peakdir
 os.system(command)

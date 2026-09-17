@@ -21,4 +21,7 @@ conda activate seq-py312
 
 ## Detailed usage
 
+For more configuration and input file prerequirements, see [prerequisite documentation](docs/prerequisite.md)
+
 For detailed instructions on running the preprocessing, alignment, and peak-calling workflows, see the [workflow documentation](docs/workflow.md).
+

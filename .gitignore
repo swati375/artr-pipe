@@ -45,3 +45,7 @@ genome_files/GRCh38/*.fa
 genome_files/GRCh38/*.gtf
 genome_files/GRCh38/*.gff3
 genome_files/GRCh38/*.csv
+
+# Large reference/genome files
+genome_files/
+rrna-files/

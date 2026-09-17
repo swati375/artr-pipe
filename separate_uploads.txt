@@ -2,7 +2,8 @@
 environment.yml: seq-py312 env for bash and python scriopts artr seq
 environmentR.yml: rbase_43 env for R scripts
 
-#rrna-files/human_rRNA_index need to be added too
+#rrna-files/human_rRNA_index instructions need to be added too
+## genome file download instructions need to be addded caz too large to be added to github
 
 peak-files-default: pe with -f BAMPE option and extsize 30 (same command as se reads but using PE mode)
 peak-files_gap30_len100: pe mode with extra params--max-gap 30 --min-length 100 in macs3 call

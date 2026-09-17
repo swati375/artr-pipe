@@ -4,7 +4,7 @@ import os
 import sys
 
 print("Step 6. calling peaks with macs3\n")
-base_dir=input('Enter Path:')
+base_dir=input('Enter Base directory Path:')
 peakdir=base_dir+'/peak-files-se-ext30/'
 command='mkdir '+peakdir
 os.system(command)

@@ -4,22 +4,21 @@ date
 echo "Step 0. check fastq file quality"
 
 
-echo -n "Please enter base directory: "
+echo -n "Please enter base directory (Please provide fill path): "
 # eg. /home/desktop/seqdir/projA
 read base_dir
-echo "All output files will be created inside this folder or the input files should be inside this folder"
+echo "All input files should be placed inside and corresponding folders for output will be created inside this folder"
 
-echo -n "Please enter file with fastq files for quality testing: \n The file should be placed inside the base dirextory provided before"
+echo -n "Please enter file with fastq files for quality testing (eg. list-fastq.txt; see example file): "
 # eg. list-fastq.txt
 read file
 file_fastq=$base_dir/$file
 
-echo -n "Please enter output directory name for fastqc results: \n"
+echo -n "Please enter output directory name for fastqc results (eg. fastqc; it will be created inside the base directory):"
 read out_dir
 echo $base_dir/$out_dir
 
-echo -n "Please enter directory of fastq files: "
-#eg. fastqc
+echo -n "Please enter directory of fastq files (eg. fastq-files; all project fastq files should be placed inside the folder): "
 read dir
 fastq_dir=$base_dir/$dir
 

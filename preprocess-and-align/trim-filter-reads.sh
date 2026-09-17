@@ -140,11 +140,17 @@ wait
 endt="$(date +%s)"
 printf "Trimming adapters for %s done, elapsed time -- %.0f s\n\n" $inrawR1 "$((( $endt - $startt)))"
 
-bash filter-rrna-new.sh $pair $base_dir
-bash align-dedup-new.sh $pair $base_dir
+bash preprocess-and-align/filter-rrna-new.sh $pair $base_dir
+bash preprocess-and-align/align-dedup-new.sh $pair $base_dir
 #####
 
 
 ### check trimmed file pairs have same no. of reads (for paired end data)
 ## zcat file_R1.fastq.gz | echo $((`wc -l`/4))
 # zcat file_R2.fastq.gz | echo $((`wc -l`/4))
+
+## to chcek #reads for all fastq files in folder
+# for f in *.fastq.gz; do
+#     echo -n "$f: "
+#     echo $(( $(zcat "$f" | wc -l) / 4 ))
+# done

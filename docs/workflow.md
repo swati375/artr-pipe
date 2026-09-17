@@ -101,13 +101,13 @@ project_directory/staralign-bam-files/
 
 ### Important
 
-The STAR genome index must be configured correctly in:
+The STAR genome index must be created and place d in correct directories. This should be configured correctly, where necessary path and version chnages must be made in:
 
 ```text
 preprocess-and-align/align-dedup.sh
 ```
 
-Please also note that the script is currently configured for the human genome and would need to be modified if a different organism is being used.
+Please also note that the script is currently configured for the human genome GRCh38 and would need to be modified if a different version/organism is being used.
 
 
 ## Step 3: Generate BigWig files for viaulization
@@ -203,38 +203,19 @@ The peaks are filtered by q-value 0.05. The .narrowPeak output file will be used
 
 ---
 
-# Configuration requirements
+## peak visualization
 
-Before running the workflow on a new system, check the reference index paths in:
+For visualizing peaks via IGV (integrated genome viewer), the user should download IGV or use the web version (https://igv.org/)
 
-These currently require the appropriate:
+Then to obtain the files: 
 
-1. Bowtie2 rRNA index
+i. Peak files form macs3: .narrowpeak file
 
-This can be created one time for human genome using:
+ii. covergae file
 
-```bash
-mkdir rrna-files
-esearch -db nucleotide -query "NR_003285.3 OR NR_003286.4 OR NR_003287.4 OR NR_023363.1" | efetch -format fasta > human_rRNA_refs.fasta
-bowtie2-build human_rRNA_refs.fasta human_rRNA_index
-```
+These files are egnerated using the bamtobed.sh script. You will need to create a new conda environment for this.
 
-2. STAR genome index (got GRCh38 are provided in genome_files folder, any other can be downloaded from gencode/ USCS browser)
-to be available on the system. 
-
-The paths should be configured for the reference genome being analyzed. They are currently working for human GRCh38. The paths can be edited in script align-dedup.sh
-
-## Software environment
-
-The recommended Conda environment is provided in:
-
-```text
-environment.yml
-```
-
-Create and activate it using:
 
 ```bash
-conda env create -f environment.yml
-conda activate seq-py312
+bash preprocess-and-align/bamtobed.sh
 ```

@@ -6,7 +6,7 @@ import sys
 ## modified for paired end files by using -f BAMPE parameter
 
 print("Step 6. calling peaks with macs3\n")
-base_dir=input('Enter Path:')
+base_dir=input('Enter  Base directory Path:')
 peakdir=base_dir+'/peak-files_min30/'#/peak-files_gap30_len100/'
 command='mkdir '+peakdir
 os.system(command)
