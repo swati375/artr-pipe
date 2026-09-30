@@ -43,7 +43,7 @@ writeXStringSet(seqs, paste(dir,paste(fname,name,".fa",sep=""),sep="/"))
 }
 
 
-########################## extract sequences for selected peaks gives as a granges object
+########################## extract sequences for selected peaks gives as granges object
 peak_seq_extract <- function(dir,peaks,fname)
 {
     library(GenomicRanges)
@@ -115,8 +115,6 @@ singlent_peak_seqlen_extract <- function(dir,peaks,fname,len)
   library(BSgenome.Hsapiens.UCSC.hg38)  # adjust genome if needed
   
   valid_chr <- as.character(seqnames(BSgenome.Hsapiens.UCSC.hg38))
-  peaks<-bs_gr
-  len<-10
   peaks <- peaks[as.character(seqnames(peaks)) %in% valid_chr]
   new_start <- pmin(start(peaks) - (len/2), start(peaks) + (len/2))
   new_end   <- pmax(start(peaks) - (len/2), start(peaks) + (len/2))
@@ -146,4 +144,11 @@ singlent_peak_seqlen_extract <- function(dir,peaks,fname,len)
   print(paste0("no. of peaks=",length(peaks)))
   print(paste0("no. of seqs=",length(seqs)))
   writeXStringSet(seqs, paste(dir,paste(fname,"_summit_",len,".fa",sep=""),sep="/"))
+}
+
+
+########### find distance of motif x from peak_summit ################
+motif_dist2peaksummit<-function()
+{
+  
 }

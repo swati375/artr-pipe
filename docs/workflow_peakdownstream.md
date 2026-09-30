@@ -6,3 +6,18 @@ It takes as input output from macs3 peak calling. Details about required inputs 
 ```bash
 Rscript peaks-analysis/cmd_peak_analysis.R -h
 ```
+
+
+
+Motif Search
+
+A. Using MEME-CHIP suite. You can go to website https://meme-suite.org/meme/doc/meme-chip.html
+
+For motif dicovery, sleect Motif Discovery-> XTREME from the left menu. Fill up form and upload the generated fasta sequence file for selected sequences. It will generate a zip file of dicovered motifs. You can also get it emailed (fill details before submitting job)
+
+B. using homer
+
+Use a conda environment of this. 
+```bash
+conda activate environment_motif
+```
