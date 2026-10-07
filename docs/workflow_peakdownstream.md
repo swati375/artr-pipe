@@ -18,7 +18,7 @@ conda activate rbase_43
 Rscript peaks-analysis/cmd_peak_analysis.R -p "/home/user/Desktop/data/ptbp1/peak-files-se-ext30" -f "peak.WT_PTBP1.narrowPeak.bed" -P "PTBP1"
 ```
 
-B. The second way is to run command wise in Rstudio. You can use peak-analysis/Rstudio_peak_analysis.R
+B. The second way is to run command wise in Rstudio. You can use peak-analysis/Rstudio_peak_analysis.R Just open the script in Rstudio. Make sure to activate the rbase_43 environment.
 
 Both of the scripts do the same job but one can be run directly on command line with providing all required inputs, while the other can prompt an input with a separate command.
 
@@ -55,3 +55,14 @@ bash stats-scripts/getmotif_fromfastaseq.sh
 ```
 
 Now, follow the instructions on the screen. the programs asks if you want to do motif discoovery or search, what motif you want to match it to etc. For motif match, example files to use as input are in the stats-scripts folder (nsun2.motif, nsun6.motif)
+
+
+### read and peak statistics
+
+A. peakfile_stats.pt: The program calculates and plots average peak length for all peaks for an input narrowPeak macs3 output file
+
+B. bam_sizestats.py: This program plots histogram for tlen/ insert size from bam file
+
+C. filter_peaks.py: This program filters macs3 called peaks by percentile. It removes 15th percentile (can be chnaged) using values in column 7 of narrowpeaks file. It also draws a distribution to show which peaks were removed.
+
+D. 
