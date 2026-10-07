@@ -4,8 +4,7 @@ date
 echo "Getting the motif using Homer2"
 
 #####
-# dir="/home/swati/Desktop/ARTR-seq/artr-origpaper-PTBP1/peak-files"
-#oripeak="/home/swati/Desktop/ARTR-seq/artr-origpaper-PTBP1/peak-files/peak.PTBP1.narrowPeak.bed"
+
 read -p "enter peaks file with complete path: " oripeak 
 printf "Your narrowpeak.bed file -- %s\n" $oripeak
 
@@ -20,7 +19,7 @@ genomeHomer2="hg38"
 printf "Your homer2 genome tag -- %s\n" ${genomeHomer2}
 
 ############################################################
-annoforHomer2="/home/swati/Desktop/ARTR-seq/common_genome_files/GRCh38/file-homer/gencode.v39.annotation-bghomer.bed12"
+annoforHomer2="common_genome_files/GRCh38/file-homer/gencode.v39.annotation-bghomer.bed12"
 printf "Your annotation bed12 file for Homer2 %s \n" ${annoforHomer2}
 
 nc=2
@@ -49,8 +48,6 @@ odir=${odir/.narrowpeak*/}
 findMotifsGenome.pl $extpeak ${genomeHomer2} $odir/ -p ${nc} -rna -S 10 -len 4,5,6 \
 	-bg ${annoforHomer2}
 
-# findMotifsGenome.pl $extpeak ${genomeHomer2} $odir/ -p ${nc} -rna -S 10 -len 5,6,7,8,9 \
-# 	-bg ${annoforHomer2}
 #####
 date
 echo "Finish!"

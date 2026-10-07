@@ -78,6 +78,7 @@ df_gr<-readRDS(paste0(dir_peak,'/',name,'.rds'))
 source(file.path(repo_dir,'peaks-analysis/function_motif_seq_extract.R'))
 nsun6ko_lostpeak<-df_gr[df_gr$log2FC_NSUN6KO_vs_WT_stress< -1.5,]
 peak_seq_extract(dir_peak,nsun6ko_lostpeak,'nsun6ko_lost_stress')
+singlent_peak_seqlen_extract(dir_peak,nsun6ko_lostpeak,'nsun6ko_lost',400)
 nsun6ko_gainpeak<-df_gr[df_gr$log2FC_NSUN6KO_vs_WT_stress> 1.5,]
 peak_seq_extract(dir_peak,nsun6ko_gainpeak,'nsun6ko_gain_stress')
 nsun6ko_midcloudpeak<-df_gr[abs(df_gr$log2FC_NSUN6KO_vs_WT_stress)<= 1.5,]
@@ -101,12 +102,28 @@ peak_seq_extract(dir_peak,dko_midcloudpeak,'dko_midcloud_stress')
 #### finding motif :
 #use environment environment_motif
 #run "~/Desktop/ARTR-seq/scripts_server/edited/stats-scripts/getmotif_fromfastaseq.sh"
+source(file.path(repo_dir,'stats-scripts/plots_deg.R'))
+p<-plot_piechart(as.data.frame(table(nsun6ko_lostpeak$region)),'nsun6ko_lost_stress')
+p
+p<-plot_piechart(as.data.frame(table(nsun6ko_gainpeak$region)),'nsun6ko_gain_stress')
+p
+p<-plot_piechart(as.data.frame(table(nsun6ko_midcloudpeak$region)),'nsun6ko_midcloud_stress')
+p
 
 
 ########################
 # select only 3utr sequences
 dfgr_water<-readRDS("~/Desktop/ARTR-seq/ezgi-data/2026-08-tia/consensus_water/deg_water.rds")
 nsun6_lost_water<-dfgr_water[dfgr_water$log2FC_NSUN6KO_vs_WT_water< -1.5,]
+source(file.path(repo_dir,'stats-scripts/plots_deg.R'))
+p<-plot_piechart(as.data.frame(table(nsun6_lost_water$region)),'nsun6ko_lost_water')
+p
+nsun6_gain_water<-dfgr_water[dfgr_water$log2FC_NSUN6KO_vs_WT_water> 1.5,]
+p<-plot_piechart(as.data.frame(table(nsun6_gain_water$region)),'nsun6ko_gain_water')
+p
+nsun6_midcloud_water<-dfgr_water[abs(dfgr_water$log2FC_NSUN6KO_vs_WT_water)< 1.5,]
+p<-plot_piechart(as.data.frame(table(nsun6_midcloud_water$region)),'nsun6ko_midcloud_water')
+p
 nsun6_lost_water_3utr<-nsun6_lost_water[nsun6_lost_water$region=='3UTR']
 source(file.path(repo_dir,'peaks-analysis/function_motif_seq_extract.R'))
 peak_seq_extract(dir_peak,nsun6_lost_water_3utr,'nsun6ko_lost_water_3utr')
@@ -121,8 +138,12 @@ singlent_peak_seqlen_extract(dir_peak,nsun6_lost_water_intron,'nsun6ko_lost_intr
 
 dfgr_water<-readRDS("~/Desktop/ARTR-seq/ezgi-data/2026-08-tia/consensus_water/deg_water.rds")
 dfgr_stress<-readRDS("~/Desktop/ARTR-seq/ezgi-data/2026-08-tia/consensus_stress/deg_stress.rds")
-nsun6_lost_water<-dfgr_water[dfgr_water$log2FC_NSUN6KO_vs_WT_water< -1.5,]
-nsun6_lost_stress<-dfgr_stress[dfgr_stress$log2FC_NSUN6KO_vs_WT_stress< -1.5,]
+# nsun6_lost_water<-dfgr_water[dfgr_water$log2FC_NSUN6KO_vs_WT_water< -1.5,]
+# nsun6_gain_water<-dfgr_water[dfgr_water$log2FC_NSUN6KO_vs_WT_water> 1.5,]
+# nsun6_mid_water<-dfgr_water[abs(dfgr_water$log2FC_NSUN6KO_vs_WT_water)< 1.5,]
+# nsun6_lost_stress<-dfgr_stress[dfgr_stress$log2FC_NSUN6KO_vs_WT_stress< -1.5,]
+# nsun6_gain_stress<-dfgr_stress[dfgr_stress$log2FC_NSUN6KO_vs_WT_stress> 1.5,]
+# nsun6_mid_stress<-dfgr_stress[abs(dfgr_stress$log2FC_NSUN6KO_vs_WT_stress)< 1.5,]
 
 # nsun6lost_stress_not_inwater <- nsun6_lost_stress[
 #   !is.na(nsun6_lost_stress$gene_id) &

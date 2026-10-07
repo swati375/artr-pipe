@@ -251,7 +251,7 @@ top_df_nsun26<- dplyr::distinct(df[c(top_idx_nsun2,top_idx_nsun6),])
 top_df_nsun6dko<-dplyr::distinct(df[c(top_idx_nsun6,top_idx_dko),])
 top_df_nsun2dko<-dplyr::distinct(df[c(top_idx_nsun2,top_idx_dko),])
 
-pdf(file = paste0(dir_peak,'/nsun2ko_nsun6ko_topdeg.pdf'),
+pdf(file = paste0(dir_peak,'/plots/nsun2ko_nsun6ko_topdeg.pdf'),
     width = 9, # The width of the plot in inches
     height = 8) # The height of the plot in inches
 
@@ -273,7 +273,7 @@ ggplot(df, aes(x = log2FC_NSUN2KO_vs_WT_water, y = log2FC_NSUN6KO_vs_WT_water)) 
 
 dev.off()
 
-pdf(file = paste0(dir_peak,'/nsundko_nsun6ko_topdeg.pdf'),
+pdf(file = paste0(dir_peak,'/plots/nsundko_nsun6ko_topdeg.pdf'),
     width = 9, # The width of the plot in inches
     height = 8) # The height of the plot in inches
 ggplot(df, aes(x=log2FC_NSUN6KO_vs_WT_water, y=log2FC_DKO_vs_WT_water)) +
@@ -292,7 +292,7 @@ ggplot(df, aes(x=log2FC_NSUN6KO_vs_WT_water, y=log2FC_DKO_vs_WT_water)) +
   theme_bw()
 dev.off()
 
-pdf(file = paste0(dir_peak,'/nsundko_nsun2ko_topdeg.pdf'),
+pdf(file = paste0(dir_peak,'/plots/nsundko_nsun2ko_topdeg.pdf'),
     width = 9, # The width of the plot in inches
     height = 8) # The height of the plot in inches
 ggplot(df, aes(x=log2FC_NSUN2KO_vs_WT_water, y=log2FC_DKO_vs_WT_water)) +

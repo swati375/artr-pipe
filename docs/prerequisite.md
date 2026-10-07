@@ -64,3 +64,10 @@ c. create list-fastq.txt and sample-id.txt files. You can follow example files i
 
 d. Download all genome files and create index files as instructed above. Change paths and create directories as shown for GRCh38 above if using another version of genome.
 
+# Running R scripts
+
+For running any R scripts, first activate the R environment. When running first time, create the conda environment using:
+```bash
+conda env create -f environmentR.yml
+conda activate rbase_43
+```

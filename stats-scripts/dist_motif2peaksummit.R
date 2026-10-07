@@ -166,7 +166,7 @@ library(ggplot2)
 
 fasta_file <- paste0(
   dir_peakcount,
-  "/nsun2ko_lost_summit_800.fa"
+  "/nsun6ko_lost_summit_800.fa"
 )
 
 motif_distance <- function(fasta_file, motif) {
@@ -195,13 +195,21 @@ motif_distance <- function(fasta_file, motif) {
 motifs <- c(
   "CTCCA",
   "CTCTA",
-  "CNGGG"
+  "CAGGG",
+  "CTGGG",
+  "CCGGG",
+  "CGGGG",
+  "GCATG"
 )
 
 colors <- c(
-  "blue",
+  "yellow",
   "red",
-  "brown"
+  "brown",
+  "purple",
+  "grey",
+  "green",
+  "blue"
 )
 
 motif_df <- do.call(

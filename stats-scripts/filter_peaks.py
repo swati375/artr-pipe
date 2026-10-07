@@ -31,7 +31,7 @@ for file in file_list:
         signal = signal.loc[valid]
 
         # -------------------------------------------------
-        # Calculate 10th percentile cutoff
+        # Calculate 15th percentile cutoff
         # -------------------------------------------------
 
         cutoff = signal.quantile(0.15)
@@ -47,7 +47,7 @@ for file in file_list:
         # -------------------------------------------------
 
         print("\n" + os.path.basename(file))
-        print(f"10th percentile cutoff: {cutoff:.3f}")
+        print(f"15th percentile cutoff: {cutoff:.3f}")
         print(f"Total peaks: {len(signal)}")
         print(f"Removed: {remove.sum()} ({remove.mean()*100:.2f}%)")
         print(f"Kept: {keep.sum()} ({keep.mean()*100:.2f}%)")

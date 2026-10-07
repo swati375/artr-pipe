@@ -148,5 +148,3 @@ fi
 date
 echo "Finish!"
 
-#/home/swati/Desktop/ARTR-seq/scripts_server/edited/stats-scripts/nsun2.motif
-#/home/swati/Desktop/ARTR-seq/ezgi-data/2026-08-tia/consensus_water/nsun2ko_lost_water.fa

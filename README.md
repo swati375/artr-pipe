@@ -25,3 +25,5 @@ For more configuration and input file prerequirements, see [prerequisite documen
 
 For detailed instructions on running the preprocessing, alignment, and peak-calling workflows, see the [workflow documentation](docs/workflow.md).
 
+More scripts for motif analysis, differential analysis, statistics on peaks, plots etc. are shown in more detail in [downstream documentation](docs/workflow_peakdownstream.md)
+

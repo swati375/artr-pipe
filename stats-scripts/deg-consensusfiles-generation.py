@@ -67,7 +67,7 @@ if __name__=='__main__':
 	base_dir=input('Enter Path of base directory:')
 	samples={}
 	print('Enter text file with sample ids created for peak calling before')
-	filein=input('\nEnter file with Path:')# /scratch/swatig/ARTR-seq/2025-09-03_AAGK7MVM5/Marijke_P._A._Baltissen/sample-id.txt
+	filein=input('\nEnter file with Path eg. /path/to/folder/sample-id.txt:')
 	samples=read_sample_ids(filein)
 	# Only show non-input samples
 	sample_options = [
@@ -101,7 +101,7 @@ if __name__=='__main__':
 	print(selected_dict)
 	print(selected_noinput_dict)
 
-	dir_name=input('\nEnter name for this selection. It will be used to create a directory. Dont use spaces but "_" between words :')# /scratch/swatig/ARTR-seq/2025-09-03_AAGK7MVM5/Marijke_P._A._Baltissen/sample-id.txt
+	dir_name=input('\nEnter name for this selection. It will be used to create a directory. Dont use spaces but "_" between words eg. consensus_water :')
 	consensus_peaks(base_dir,selected_noinput_dict,dir_name)
 	peak_read_counts(base_dir,selected_dict,dir_name)
 	

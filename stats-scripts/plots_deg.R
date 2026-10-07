@@ -41,5 +41,23 @@ plot_deg<- function(df_feature,y,xlabel,ylabel,main,df_genelist)
   abline(v = 0, lty = 2)
 }
 
+plot_piechart<-function(data_features,name)
+{
+# Make a data frame with region counts
+region_counts <- data_features
+colnames(region_counts) <- c("Region", "Count")
 
+# Calculate percentage labels
+region_counts$Perc <- round(region_counts$Count / sum(region_counts$Count) * 100, 1)
+region_counts$Label <- paste0(region_counts$Region, " (", region_counts$Perc, "%)")
 
+# Pie chart with ggplot2
+p<-ggplot(region_counts, aes(x = "", y = Count, fill = Region)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar(theta = "y") +
+  theme_void() +
+  labs(title = paste0("Peak annotation distribution for ",name)) +
+  geom_text(aes(label = Perc), position = position_stack(vjust = 0.5), size = 4)
+
+return (p)
+}
