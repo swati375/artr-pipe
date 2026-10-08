@@ -29,6 +29,11 @@ outfdir=$base_dir/trimmed-files
 mkdir $outfdir
 printf "Your directory containing the output files fq.gz -- %s\n" $outfdir
 
+#################################### we assume that index files already created #############################
+
+echo -n "Please enter rrna index files directory followed by prefix eg. fullpath/rrna-files/human_rRNA_index: "
+read bt2idx
+
 ###
 startt="$(date +%s)"
 
@@ -140,8 +145,8 @@ wait
 endt="$(date +%s)"
 printf "Trimming adapters for %s done, elapsed time -- %.0f s\n\n" $inrawR1 "$((( $endt - $startt)))"
 
-bash preprocess-and-align/filter-rrna-new.sh $pair $base_dir
-bash preprocess-and-align/align-dedup-new.sh $pair $base_dir
+bash preprocess-and-align/filter-rrna.sh $pair $base_dir $bt2idx
+bash preprocess-and-align/align-dedup.sh $pair $base_dir
 #####
 
 

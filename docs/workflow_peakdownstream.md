@@ -14,7 +14,6 @@ Rscript peaks-analysis/cmd_peak_analysis.R -h
 ```
 
 ```bash
-conda activate rbase_43
 Rscript peaks-analysis/cmd_peak_analysis.R -p "/home/user/Desktop/data/ptbp1/peak-files-se-ext30" -f "peak.WT_PTBP1.narrowPeak.bed" -P "PTBP1"
 ```
 
@@ -37,7 +36,10 @@ python stats-scripts/deg-consensusfiles-generation.py
 ```
 Follow the instructions on the screen and enter input files as required (eg. the sample-id.txt file we created earlier), conditions to be compared etc.
 
-Then, in Rstudio you can use the 'Rstudio-deg-conditionwise.R' script by processing it line by line. It reads the consensus files and does DEG analysis on the files generated above. In the same script you can also plot scatter plots and derive fasta sequences for selected peaks for motif analysis.
+Then, in Rstudio you can use the 'Rstudio-deg-conditionwise.R' script by processing it line by line. It reads the consensus files and does DEG analysis on the files generated above. In the same script you can also plot scatter plots. 
+
+To derive fasta sequences for selected peaks for motif analysis, in Rstudio you can use 'deg_motifanalysis.R'
+
 
 ### Motif Search
 
@@ -59,10 +61,12 @@ Now, follow the instructions on the screen. the programs asks if you want to do 
 
 ### read and peak statistics
 
-A. peakfile_stats.pt: The program calculates and plots average peak length for all peaks for an input narrowPeak macs3 output file
+A. peakfile_stats.py: The program calculates and plots average peak length for all peaks for an input narrowPeak macs3 output file
 
 B. bam_sizestats.py: This program plots histogram for tlen/ insert size from bam file
 
 C. filter_peaks.py: This program filters macs3 called peaks by percentile. It removes 15th percentile (can be chnaged) using values in column 7 of narrowpeaks file. It also draws a distribution to show which peaks were removed.
 
-D. 
+D. dist_motif2peaksummit.R: This program finds distance of given motifs from peak summit. It can find both all motif occurrences and the closest motif occurrence to peak summit and plots the same.
+
+E. get_motif.bash: This program finds motifs using homer. It directly takes the narrowpeak file and extracts +-20 nt from peak start and end to run homer.

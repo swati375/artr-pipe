@@ -5,6 +5,8 @@ echo "Step 1.3 Removing reads mapping to rRNA"
 
 base_dir="$2"
 pair="$1"
+bt2idx="$3"
+
 if [[ "$pair" != "TRUE" && "$pair" != "FALSE" ]]; then
     echo "ERROR: First argument must be TRUE (paired-end) or FALSE (single-end)."
     exit 1
@@ -13,10 +15,10 @@ outfdir=$base_dir/trimmed-files
 
 nc=4
 
-echo -n "Please enter rrna index files directory followed by prefix eg. rrna-files/human_rRNA_index: "
-read bt2idx
+#echo -n "Please enter rrna index files directory followed by prefix eg. fullpath/rrna-files/human_rRNA_index: "
+#read bt2idx
 
-#################################### we assume that index files already created once, so below lines are commented #############################
+#################################### we assume that index files already created #############################
 
 printf "Your bowtie2 index directory -- %s\n" $bt2idx
 

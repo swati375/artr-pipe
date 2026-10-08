@@ -84,7 +84,7 @@ or single-end:
 FALSE
 ```
 
-It will then ask for the Project base directory.
+It will then ask for the Project base directory, if reads are paired or single end and Rrna index folder. It must already be created before running the program. 
 
 The script performs: Adapter trimming, UMI extraction 
 
@@ -100,12 +100,9 @@ project_directory/staralign-bam-files/
 ```
 
 ### Important
+Next, the alignment with genome is automatically performed on rrna- filtered reads. 
 
-The STAR genome index must be created and place d in correct directories. This should be configured correctly, where necessary path and version chnages must be made in:
-
-```text
-preprocess-and-align/align-dedup.sh
-```
+The STAR genome index are created in the script.
 
 Please also note that the script is currently configured for the human genome GRCh38 and would need to be modified if a different version/organism is being used.
 
@@ -213,8 +210,7 @@ i. Peak files form macs3: .narrowpeak file
 
 ii. covergae file
 
-These files are egnerated using the bamtobed.sh script. You will need to create a new conda environment for this.
-
+These files are generated using the bamtobed.sh script. You will need to create a new conda environment for this.
 
 ```bash
 bash preprocess-and-align/bamtobed.sh

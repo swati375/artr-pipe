@@ -1,4 +1,4 @@
-# Artr-seq-processing
+# ARTR-seq processing pipeline
 A command line workflow to process Paired and single end ARTR-seq reads from fastq files to peak calling and downstream analysis, including:
 
 - FASTQ quality control
