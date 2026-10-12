@@ -1,4 +1,4 @@
- ARTR-seq Processing Workflow
+# ARTR-seq Processing Workflow
 
 This document describes how to run the preprocessing, alignment, and MACS3 peak-calling workflows included in this repository.
 
@@ -24,7 +24,7 @@ Normalization for IGV
 MACS3 peak calling
 ```
 
-# 1. Preprocessing and alignment
+## 1. Preprocessing and alignment
 
 All preprocessing and alignment scripts are located in:
 
@@ -32,7 +32,7 @@ All preprocessing and alignment scripts are located in:
 preprocess-and-align/
 ```
 
-## Input directory structure
+### Input directory structure
 
 Before starting, arrange the raw sequencing files should be placed in a separate folder inside the project directory, as follows:
 
@@ -45,7 +45,7 @@ project_directory/
 ```
 For paired-end data, both R1 and R2 files must be present.
 
-## Step 1: Checking Quality of squencing files using FASTQ
+### Step 1: Checking Quality of squencing files using FASTQ
 
 Run:
 
@@ -64,7 +64,7 @@ The output directory contains the FastQC results and the MultiQC summary.
 
 ---
 
-## Step 2: Sequence Preprocessing
+### Step 2: Sequence Preprocessing
 
 Run:
 
@@ -99,7 +99,7 @@ project_directory/trimmed-files/
 project_directory/staralign-bam-files/
 ```
 
-### Important
+#### Important
 Next, the alignment with genome is automatically performed on rrna- filtered reads. 
 
 The STAR genome index are created in the script.
@@ -107,7 +107,7 @@ The STAR genome index are created in the script.
 Please also note that the script is currently configured for the human genome GRCh38 and would need to be modified if a different version/organism is being used.
 
 
-## Step 3: Generate BigWig files for viaulization
+### Step 3: Generate BigWig files for viaulization
 
 After preprocessing and alignment are complete, run:
 
@@ -124,11 +124,11 @@ project_directory/crosslink_nt/
 One BigWig file is generated for each sample.
 
 
-# 2. MACS3 peak calling
+## 2. MACS3 peak calling
 
 For Peak-calling, MACS3 peak caller has been used and options chosen to run with RNA reads. Check MACS3 documentation (https://macs3-project.github.io/MACS/) for details and different parameters)
 
-## Sample ID file
+### Sample ID file
 
 Peak calling uses a sample identification file to associate IP samples with their corresponding input controls.
 
@@ -172,7 +172,7 @@ use:
 
 ---
 
-## peak calling
+### peak calling
 
 Run the single-end workflow using:
 
@@ -200,7 +200,7 @@ The peaks are filtered by q-value 0.05. The .narrowPeak output file will be used
 
 ---
 
-## peak visualization
+### peak visualization
 
 For visualizing peaks via IGV (integrated genome viewer), the user should download IGV or use the web version (https://igv.org/)
 

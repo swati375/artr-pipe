@@ -21,8 +21,8 @@ printf "Your STAR index directory -- %s\n" $staridx
 ##download refrence files gft annotation(CHR) and fasta files (PRI)
 
 STAR --runThreadN 8 --runMode genomeGenerate --genomeDir $staridx \
- --genomeFastaFiles genome_files/GRCh38.primary_assembly.genome.fa \
- --sjdbGTFfile genome_files/gencode.v39.annotation.gtf --sjdbOverhang 100
+ --genomeFastaFiles genome_files/GRCh38/GRCh38.primary_assembly.genome.fa \
+ --sjdbGTFfile genome_files/GRCh38/gencode.v39.annotation.gtf --sjdbOverhang 100
 
 nc=5
 # printf "Your core number used for STAR -- %s\n" $nc
