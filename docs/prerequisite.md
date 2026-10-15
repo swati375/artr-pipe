@@ -71,3 +71,11 @@ For running any R scripts, first activate the R environment. When running first 
 conda env create -f environmentR.yml
 conda activate rbase_43
 ```
+
+Note: All scripts in preprocessing except bamtobed.sh should use 'seq-py312' conda environment. For bamtobed.sh use 'chipseq_env'. For downstream analysis, all R scripts should be run after activating 'rbase_43' environment and homer (for motif analysis) is installed under conda environment 'motif'.
+
+One can check the list of conda environments created on a system and accessible for your user using:
+```bash
+conda info --envs
+```
+In the output in screen, '*' marks the active conda environment.

@@ -107,11 +107,12 @@ The STAR genome index are created in the script.
 Please also note that the script is currently configured for the human genome GRCh38 and would need to be modified if a different version/organism is being used.
 
 
-### Step 3: Generate BigWig files for viaulization
+### Step 3: Generate BigWig files for visualization
 
 After preprocessing and alignment are complete, run:
 
 ```bash
+conda activate chipseq_env
 bash preprocess-and-align/bamtobed.sh
 ```
 
@@ -122,6 +123,14 @@ project_directory/crosslink_nt/
 ```
 
 One BigWig file is generated for each sample.
+
+For visualizing peaks via IGV (integrated genome viewer), the user should download IGV or use the web version (https://igv.org/)
+
+Then load the foloowing files onto IGV: 
+
+i. Peak files form macs3: .narrowpeak file
+
+ii. coverage file generated using bamtobed.sh above
 
 
 ## 2. MACS3 peak calling
@@ -200,18 +209,3 @@ The peaks are filtered by q-value 0.05. The .narrowPeak output file will be used
 
 ---
 
-### peak visualization
-
-For visualizing peaks via IGV (integrated genome viewer), the user should download IGV or use the web version (https://igv.org/)
-
-Then to obtain the files: 
-
-i. Peak files form macs3: .narrowpeak file
-
-ii. covergae file
-
-These files are generated using the bamtobed.sh script. You will need to create a new conda environment for this.
-
-```bash
-bash preprocess-and-align/bamtobed.sh
-```
