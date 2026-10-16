@@ -21,7 +21,6 @@ B. The second way is to run command wise in Rstudio. You can use peak-analysis/R
 
 Both of the scripts do the same job but one can be run directly on command line with providing all required inputs, while the other can prompt an input with a separate command.
 
-
 ## stats_scripts
 
 Other scripts for performing basic statistics on peak files, motifs and for plots are also in the stats-scripts folder.
@@ -37,6 +36,9 @@ python stats-scripts/deg-consensusfiles-generation.py
 Follow the instructions on the screen and enter input files as required (eg. the sample-id.txt file we created earlier), conditions to be compared etc.
 
 Then, in Rstudio you can use the 'Rstudio-deg-conditionwise.R' script by processing it line by line. It reads the consensus files and does DEG analysis on the files generated above. In the same script you can also plot scatter plots. 
+
+*Note: This R script 'Rstudio-deg-conditionwise.R' assumed water and stress conditions and by default uses those in file and folder names. If you have different conditions, use 'Rstudio-deg-conditionwise-modified.R'. Please again check the sample-id.txt format for how file names for folders were given. This determines the folder structure of the outputs.
+(The modified script is still not extensively tested).
 
 To derive fasta sequences for selected peaks for motif analysis, in Rstudio you can use 'deg_motifanalysis.R'
 
@@ -58,6 +60,12 @@ bash stats-scripts/getmotif_fromfastaseq.sh
 
 Now, follow the instructions on the screen. the programs asks if you want to do motif discoovery or search, what motif you want to match it to etc. For motif match, example files to use as input are in the stats-scripts folder (nsun2.motif, nsun6.motif)
 
+Note: to search for other motifs eg. DRACH a new Position Weight Matrix (PWM) or a motif matrix: 
+
+```bash
+conda activate motif
+seq2profile.pl DRACH >> path/to/store/m6a.motif
+```
 
 ### read and peak statistics
 

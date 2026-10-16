@@ -139,7 +139,7 @@ For Peak-calling, MACS3 peak caller has been used and options chosen to run with
 
 ### Sample ID file
 
-Peak calling uses a sample identification file to associate IP samples with their corresponding input controls.
+Peak calling uses a sample identification file to associate IP samples with their corresponding input controls. Please check the sample-id.txt format for how file names for folders were given, specially you you want to do differential expression analysis later and/or have several conditions to test. This determines the folder structure of the outputs.
 
 An example file is provided at:
 

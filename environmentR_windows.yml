@@ -1,0 +1,42 @@
+name: rbase_43_windows
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # A portable Windows Conda base for R.
+  # The original file was exported from Linux and contains Linux-only builds.
+  - r-base=4.3
+  - r-biocmanager
+  - r-remotes
+  - r-data.table
+  - r-ggplot2
+  - r-dplyr
+  - r-tidyr
+  - r-readr
+  - r-stringr
+  - r-igraph
+  - r-rmarkdown
+  - r-knitr
+  - r-curl
+  - r-xml2
+  - r-jsonlite
+  - r-openxlsx
+  - r-pheatmap
+  - r-circlize
+  - r-patchwork
+  - r-ggrepel
+  - r-ggpubr
+  - r-ggsci
+  - r-ggthemes
+  - r-ggally
+  - r-reshape2
+  - r-survival
+  - r-lme4
+  - r-caret
+  - r-matrixstats
+  - r-scales
+  - r-png
+  - r-jpeg
+  - r-rcolorbrewer
+  - r-rstudioapi
+  - r-tidyverse

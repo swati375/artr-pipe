@@ -127,8 +127,8 @@ l=peak_go(name,sample_dir)
 ##--------------------------------------------
 source(file.path(script_dir,'function_motif_seq_extract.R'))
 ## eg.
-peak_motif_seq_extract(sample_dir,file,c('Intron'),'intron_')
-peak_motif_seq_extract(sample_dir,file,c('3UTR','Intron'),'utr3_intron_')
+peak_motif_seq_extract(sample_dir,name,c('Intron'),'intron_')
+peak_motif_seq_extract(sample_dir,name,c('3UTR','Intron'),'utr3_intron_')
 
 ##############check peak lengths in data using the hist_peaklength function in common functions in jupyter notebook- still to add ####################
 
