@@ -209,3 +209,4 @@ The peaks are filtered by q-value 0.05. The .narrowPeak output file will be used
 
 ---
 
+** Codes and documentation by Swati Gupta

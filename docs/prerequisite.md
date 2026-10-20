@@ -79,3 +79,7 @@ One can check the list of conda environments created on a system and accessible 
 conda info --envs
 ```
 In the output in screen, '*' marks the active conda environment.
+
+
+
+** Codes and documentation by Swati Gupta

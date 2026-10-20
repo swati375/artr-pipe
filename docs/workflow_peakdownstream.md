@@ -78,3 +78,6 @@ C. filter_peaks.py: This program filters macs3 called peaks by percentile. It re
 D. dist_motif2peaksummit.R: This program finds distance of given motifs from peak summit. It can find both all motif occurrences and the closest motif occurrence to peak summit and plots the same.
 
 E. get_motif.bash: This program finds motifs using homer. It directly takes the narrowpeak file and extracts +-20 nt from peak start and end to run homer.
+
+-----------
+** Codes and documentation by Swati Gupta
